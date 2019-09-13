@@ -1,0 +1,44 @@
+{
+  "main": "node_modules/expo/AppEntry.js",
+  "scripts": {
+    "start": "expo start",
+    "android": "expo start --android",
+    "ios": "expo start --ios",
+    "web": "expo start --web",
+    "eject": "expo eject"
+  },
+  "dependencies": {
+    "@eva-design/eva": "^1.0.1",
+    "@potluckmarket/ella": "^1.4.0",
+    "@potluckmarket/louis": "^1.0.2",
+    "aws-amplify": "^1.1.36",
+    "aws-appsync": "^1.8.1",
+    "expo": "^34.0.1",
+    "expo-asset": "^6.0.0",
+    "expo-image-picker": "^6.0.0",
+    "expo-permissions": "^6.0.0",
+    "graphql-tag": "^2.10.1",
+    "moment": "^2.24.0",
+    "react": "16.8.3",
+    "react-dom": "^16.8.6",
+    "react-native": "https://github.com/expo/react-native/archive/sdk-34.0.0.tar.gz",
+    "react-native-app-intro-slider": "^3.0.0",
+    "react-native-calendars": "^1.210.0",
+    "react-native-elements": "^1.1.0",
+    "react-native-gesture-handler": "^1.3.0",
+    "react-native-modal-datetime-picker": "^7.5.0",
+    "react-native-modalbox": "^1.7.1",
+    "react-native-reanimated": "^1.1.0",
+    "react-native-ui-kitten": "^4.2.0-beta.1",
+    "react-native-vector-icons": "^6.6.0",
+    "react-native-web": "^0.11.4",
+    "react-navigation": "^3.11.1"
+  },
+  "devDependencies": {
+    "@types/react": "^16.8.23",
+    "@types/react-native": "^0.57.65",
+    "babel-preset-expo": "^6.0.0",
+    "typescript": "^3.4.5"
+  },
+  "private": true
+}

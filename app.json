@@ -1,0 +1,52 @@
+{
+  "expo": {
+    "name": "Potluck MED",
+    "slug": "PotluckMED",
+    "privacy": "unlisted",
+    "sdkVersion": "34.0.0",
+    "platforms": ["ios", "android", "web"],
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/potluck(med)_icon.png",
+    "splash": {
+      "image": "./assets/images/potluck(med)_icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#4BC4CE"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": ["**/*"],
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "com.potluckmarket.PotluckMED",
+      "buildNumber": "1.0.2",
+      "icon": "./assets/images/potluck(med)_icon.png",
+      "isTabletOnly": false,
+      "usesIcloudStorage": false,
+      "splash": {
+        "backgroundColor": "#4BC4CE",
+        "resizeMode": "contain",
+        "image": "./assets/images/potluck(med)_icon.png",
+        "tabletImage": "./assets/images/potluck(med)_icon.png"
+      }
+    },
+    "android": {
+      "package": "com.potluckmarket.PotluckMED",
+      "versionCode": 1,
+      "icon": "./assets/images/potluck(med)_icon.png",
+      "googleServicesFile": "./google-services.json",
+      "permissions": ["CAMERA_ROLL"],
+      "splash": {
+        "backgroundColor": "#4BC4CE",
+        "resizeMode": "contain",
+        "ldpi": "./assets/images/potluck(med)_icon.png",
+        "mdpi": "./assets/images/potluck(med)_icon.png",
+        "hdpi": "./assets/images/potluck(med)_icon.png",
+        "xhdpi": "./assets/images/potluck(med)_icon.png",
+        "xxhdpi": "./assets/images/potluck(med)_icon.png",
+        "xxxhdpi": "./assets/images/potluck(med)_icon.png"
+      }
+    }
+  }
+}

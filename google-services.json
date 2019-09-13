@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "338694149962",
+    "firebase_url": "https://potluck-med-3c47b.firebaseio.com",
+    "project_id": "potluck-med-3c47b",
+    "storage_bucket": "potluck-med-3c47b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:338694149962:android:f122b9f121b67d9a8693b3",
+        "android_client_info": {
+          "package_name": "com.potluckmarket.PotluckMED"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "338694149962-n3pngi85cpqnbiiaoit1e3j588601jei.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD_LYLHZPGsoKcHGc_Jv5-bEjPFsKwRsWg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "338694149962-n3pngi85cpqnbiiaoit1e3j588601jei.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

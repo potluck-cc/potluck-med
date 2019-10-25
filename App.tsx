@@ -2,18 +2,18 @@ import React, { memo, useState } from "react";
 import { StatusBar } from "react-native";
 import { mapping, light as lightTheme } from "@eva-design/eva";
 import { ApplicationProvider } from "react-native-ui-kitten";
-import Navigation from "./navigation";
+import Navigation from "navigation";
 
 import Amplify, { Auth } from "aws-amplify";
 import awsConfig from "./aws-exports";
 
 import { appsyncFetch, OperationType } from "@potluckmarket/ella";
-import { GetUser, GetDoctor } from "./queries";
-import { CreateUser, UpdateDoctor, UpdateUser } from "./mutations";
-import client from "./client";
-import AppContext from "./AppContext";
+import { GetUser, GetDoctor } from "queries";
+import { CreateUser, UpdateDoctor, UpdateUser } from "mutations";
+import client from "client";
+import AppContext from "appcontext";
 
-import { isUserADoctor as determineIfUserIsADoctor } from "./utilities";
+import { isUserADoctor as determineIfUserIsADoctor } from "utilities";
 
 import { AppLoading, Notifications } from "expo";
 
@@ -61,7 +61,7 @@ export default memo(function App() {
     ]);
   }
 
-  async function initialize(currentUser) {
+  async function initialize(currentUser?) {
     let currUser;
     let expoPushToken;
     let isADoctor;
@@ -73,8 +73,8 @@ export default memo(function App() {
         currUser = await Auth.currentAuthenticatedUser();
       }
 
-      expoPushToken = await registerForPushNotificationsAsync();
       isADoctor = determineIfUserIsADoctor(currUser);
+      expoPushToken = await registerForPushNotificationsAsync();
     } catch {}
 
     try {
@@ -88,13 +88,13 @@ export default memo(function App() {
               document: GetDoctor,
               operationType: OperationType.query,
               variables: {
-                id: "0046c062-32ed-48e9-81ef-35b62ac54ef2"
+                id: currUser.username
               },
               fetchPolicy: "network-only"
             })) || null;
 
           if (getDoctor) {
-            if (!getDoctor.token || getDoctor.token !== expoPushToken) {
+            if (!getDoctor.medToken || getDoctor.medToken !== expoPushToken) {
               if (expoPushToken) {
                 await appsyncFetch({
                   client,
@@ -102,13 +102,13 @@ export default memo(function App() {
                   operationType: OperationType.mutation,
                   variables: {
                     id: getDoctor.id,
-                    token: expoPushToken
+                    medToken: expoPushToken
                   }
                 });
 
                 await setCurrentAuthenticatedUser({
                   ...getDoctor,
-                  token: expoPushToken
+                  medToken: expoPushToken
                 });
               }
             } else {
@@ -128,19 +128,19 @@ export default memo(function App() {
             })) || null;
 
           if (getUser) {
-            if (!getUser.token || getUser.token !== expoPushToken) {
+            if (!getUser.medToken || getUser.medToken !== expoPushToken) {
               await appsyncFetch({
                 client,
                 document: UpdateUser,
                 operationType: OperationType.mutation,
                 variables: {
                   id: getUser.id,
-                  token: expoPushToken
+                  medToken: expoPushToken
                 }
               });
               await setCurrentAuthenticatedUser({
                 ...getUser,
-                token: expoPushToken
+                medToken: expoPushToken
               });
             } else {
               await setCurrentAuthenticatedUser(getUser);
@@ -154,7 +154,7 @@ export default memo(function App() {
                 variables: {
                   id: currUser.attributes.sub,
                   phone: currUser.attributes.phone_number,
-                  token: expoPushToken,
+                  medToken: expoPushToken,
                   firstname: currUser.attributes["custom:firstname"],
                   lastname: currUser.attributes["custom:lastname"],
                   email: currUser.attributes["custom:email"]
@@ -164,7 +164,7 @@ export default memo(function App() {
             if (createUser) {
               await setCurrentAuthenticatedUser({
                 ...createUser,
-                token: expoPushToken
+                medToken: expoPushToken
               });
             } else {
               await setCurrentAuthenticatedUser({
@@ -183,7 +183,7 @@ export default memo(function App() {
         setCurrentAuthenticatedUser({
           id: currUser.attributes.sub,
           phone: currUser.attributes.phone_number,
-          token: expoPushToken,
+          medToken: expoPushToken,
           firstname: currUser.attributes["custom:firstname"],
           lastname: currUser.attributes["custom:lastname"],
           email: currUser.attributes["custom:email"]
@@ -212,10 +212,10 @@ export default memo(function App() {
       return;
     }
 
-    // Get the token that uniquely identifies this device
-    let token = await Notifications.getExpoPushTokenAsync();
+    // Get the medToken that uniquely identifies this device
+    let medToken = await Notifications.getExpoPushTokenAsync();
 
-    return token;
+    return medToken;
   }
 
   if (!appReady) {

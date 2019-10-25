@@ -5,24 +5,46 @@
 // copy, distribute and modify it.
 
 // AWS Mobile Hub Project Constants
-const awsmobile = {
-    'aws_app_analytics': 'enable',
-    'aws_cognito_identity_pool_id': 'us-east-1:064cb78d-c500-4af1-b5b5-e0a6ef2c9fa7',
-    'aws_cognito_region': 'us-east-1',
-    'aws_mobile_analytics_app_id': '5411779b26b149018fd4e870469c22a3',
-    'aws_mobile_analytics_app_region': 'us-east-1',
-    'aws_project_id': '75de70f1-9db4-4674-8460-32196d5b9adb',
-    'aws_project_name': 'potluck-enduser',
-    'aws_project_region': 'us-east-1',
-    'aws_resource_name_prefix': 'potluckenduser-mobilehub-416787849',
-    'aws_sign_in_enabled': 'enable',
-    'aws_user_files': 'enable',
-    'aws_user_files_s3_bucket': 'potluckenduser-userfiles-mobilehub-416787849',
-    'aws_user_files_s3_bucket_region': 'us-east-1',
-    'aws_user_pools': 'enable',
-    'aws_user_pools_id': 'us-east-1_nIhH8qBkt',
-    'aws_user_pools_mfa_type': 'OFF',
-    'aws_user_pools_web_client_id': '4fjeafek2546j7lps20sj7ma3u',
-}
+const awsmobile_DEV = {
+  aws_app_analytics: "enable",
+  aws_cognito_identity_pool_id:
+    "us-east-1:cd9c8f6d-b832-4c75-a928-d0b8a1c9d268",
+  aws_cognito_region: "us-east-1",
+  aws_mobile_analytics_app_id: "2b1850304f714e27a3413fddd3f15036",
+  aws_mobile_analytics_app_region: "us-east-1",
+  aws_project_id: "412f4034-2f73-4853-aaaf-3d773f968997",
+  aws_project_name: "potluck-dev",
+  aws_project_region: "us-east-1",
+  aws_resource_name_prefix: "potluckdev-mobilehub-657079931",
+  aws_sign_in_enabled: "enable",
+  aws_user_files: "enable",
+  aws_user_files_s3_bucket: "potluckdev-userfiles-mobilehub-657079931",
+  aws_user_files_s3_bucket_region: "us-east-1",
+  aws_user_pools: "enable",
+  aws_user_pools_id: "us-east-1_42KghV2Sk",
+  aws_user_pools_mfa_type: "OFF",
+  aws_user_pools_web_client_id: "7pt6uv24rq853qkb7ks67spnaf"
+};
 
-export default awsmobile;
+const awsmobile_PROD = {
+  aws_app_analytics: "enable",
+  aws_cognito_identity_pool_id:
+    "us-east-1:0887a3be-06d8-485f-ae61-63b2460103fa",
+  aws_cognito_region: "us-east-1",
+  aws_mobile_analytics_app_id: "4089ee653d7d4d4eb53d2e9c24c5c45e",
+  aws_mobile_analytics_app_region: "us-east-1",
+  aws_project_id: "c9ccaad8-bbac-4580-8fd0-f270433c5fef",
+  aws_project_name: "potluck-enduser-apps",
+  aws_project_region: "us-east-1",
+  aws_resource_name_prefix: "potluckenduserapps-mobilehub-1743265075",
+  aws_sign_in_enabled: "enable",
+  aws_user_files: "enable",
+  aws_user_files_s3_bucket: "potluckenduserapps-userfiles-mobilehub-1743265075",
+  aws_user_files_s3_bucket_region: "us-east-1",
+  aws_user_pools: "enable",
+  aws_user_pools_id: "us-east-1_CwBA0oPZ3",
+  aws_user_pools_mfa_type: "OPTIONAL",
+  aws_user_pools_web_client_id: "j1iedq2thrdkuenuqmo3vcio2"
+};
+
+export default __DEV__ ? awsmobile_PROD : awsmobile_PROD;

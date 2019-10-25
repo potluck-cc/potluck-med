@@ -7,7 +7,7 @@ export interface AppContextInterface {
   setCurrentAuthenticatedUser: Dispatch<any>;
   selectedConversation: null;
   selectConversation: Dispatch<any>;
-  countyFilter: null;
+  countyFilter: null | string;
   setCountyFilter: Dispatch<any>;
   appointmentNotifications: number;
   messageNotifications: number;

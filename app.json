@@ -5,7 +5,7 @@
     "privacy": "unlisted",
     "sdkVersion": "34.0.0",
     "platforms": ["ios", "android", "web"],
-    "version": "1.0.2",
+    "version": "1.0.3",
     "orientation": "portrait",
     "icon": "./assets/images/potluck(med)_icon.png",
     "splash": {
@@ -25,7 +25,7 @@
     "ios": {
       "supportsTablet": false,
       "bundleIdentifier": "com.potluckmarket.PotluckMED",
-      "buildNumber": "1.0.2",
+      "buildNumber": "1.0.3",
       "icon": "./assets/images/potluck(med)_icon.png",
       "isTabletOnly": false,
       "usesIcloudStorage": false,
@@ -38,7 +38,7 @@
     },
     "android": {
       "package": "com.potluckmarket.PotluckMED",
-      "versionCode": 3,
+      "versionCode": 4,
       "icon": "./assets/images/potluck(med)_icon_sm.png",
       "googleServicesFile": "./google-services.json",
       "permissions": ["CAMERA_ROLL"],
